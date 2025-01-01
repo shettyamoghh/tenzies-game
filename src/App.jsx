@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import Die from './components/Die'
 import { nanoid } from 'nanoid'
+import Die from './components/Die'
+import Header from './components/Header'
 
 function App() {
   // set/update array of dice
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <main>
+      <Header />
       <div className='dice-container'>
         {diceElements}
       </div>

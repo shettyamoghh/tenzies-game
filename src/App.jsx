@@ -27,8 +27,13 @@ function App() {
     setDice(generateNewDice)
   }
 
+  // toggle die's isHeld property based on id
   function toggleHold(id) {
-    console.log(id)
+    setDice(dice.map((die) => (
+      die.id === id
+      ? {...die, isHeld: !die.isHeld}
+      : die
+    )))
   }
 
   // return div element for each die in dice array

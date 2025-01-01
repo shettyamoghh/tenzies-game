@@ -22,12 +22,24 @@ function App() {
       }))
   }
 
+  // update dice array
   function updateDice() {
     setDice(generateNewDice)
   }
 
+  function toggleHold(id) {
+    console.log(id)
+  }
+
+  // return div element for each die in dice array
   const diceElements = dice.map(die => (
-    <Die key={die.id} value={die.value}/>
+    <Die 
+      key={die.id} 
+      value={die.value}
+      isHeld={die.isHeld}
+      toggleHold={toggleHold}
+      id={die.id}
+    />
   ))
 
   return (

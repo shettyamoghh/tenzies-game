@@ -54,11 +54,11 @@ button {
 }
 
 button.roll-dice {
-  height: 50px;
-  width: 100px;
+  height: 100px;
+  width: 200px;
   border: none;
   border-radius: 6px;
   background-color: #5035FF;
   color: white;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
 }

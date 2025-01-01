@@ -22,9 +22,13 @@ function App() {
       }))
   }
 
-  // update dice array
+  // update dice that are NOT held in array
   function updateDice() {
-    setDice(generateNewDice)
+    setDice(dice.map((die) => (
+      die.isHeld !== true
+      ? {...die, value: randomDie()}
+      : die
+    )))
   }
 
   // toggle die's isHeld property based on id

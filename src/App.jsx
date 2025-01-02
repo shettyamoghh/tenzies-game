@@ -6,7 +6,7 @@ import ReactConfetti from 'react-confetti'
 
 function App() {
   // set/update array of dice
-  const [dice, setDice] = useState(generateNewDice())
+  const [dice, setDice] = useState(() => generateNewDice())
   
   // check if winning conditions are met
   // .every() returns boolean vs .map() returns array

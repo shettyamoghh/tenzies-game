@@ -31,9 +31,12 @@ function App() {
       }))
   }
 
-  // update dice that are NOT held in array
+  // if game has been won, reset dice
+  // else only roll dice that are NOT held
   function updateDice() {
-    setDice(dice.map((die) => (
+    gameWon 
+    ? setDice(generateNewDice())
+    : setDice(dice.map((die) => (
       die.isHeld !== true
       ? {...die, value: randomDie()}
       : die

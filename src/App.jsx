@@ -65,8 +65,9 @@ function App() {
       <div className='dice-container'>
         {diceElements}
       </div>
-      {gameWon && <button className='roll-dice' onClick={updateDice}>New Game</button>}
-      {!gameWon && <button className='roll-dice' onClick={updateDice}>Roll</button>}
+      <button className='roll-dice' onClick={updateDice}>
+        {gameWon ? "New Game" : "Roll"}
+      </button>
     </main>
   )
 }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { nanoid } from 'nanoid'
 import Die from './components/Die'
 import Header from './components/Header'
+import ReactConfetti from 'react-confetti'
 
 function App() {
   // set/update array of dice
@@ -61,6 +62,7 @@ function App() {
 
   return (
     <main>
+      {gameWon && <ReactConfetti />}
       <Header />
       <div className='dice-container'>
         {diceElements}

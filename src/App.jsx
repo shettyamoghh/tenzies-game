@@ -6,17 +6,13 @@ import Header from './components/Header'
 function App() {
   // set/update array of dice
   const [dice, setDice] = useState(generateNewDice())
-  // store boolean for winning game
-  let gameWon = false
   
   // check if winning conditions are met
   // .every() returns boolean vs .map() returns array
-  if (dice.every( die => 
+  const gameWon = dice.every( die => 
     die.isHeld == true &&
     die.value == dice[0].value
-  )) {
-    gameWon = true
-  }
+  )
 
   // throw die (randomDie)
   function randomDie() {

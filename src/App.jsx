@@ -6,6 +6,8 @@ import Header from './components/Header'
 function App() {
   // set/update array of dice
   const [dice, setDice] = useState(generateNewDice())
+  // store boolean for winning game
+  let gameWon = false
   
   // check if winning conditions are met
   // .every() returns boolean vs .map() returns array
@@ -13,7 +15,7 @@ function App() {
     die.isHeld == true &&
     die.value == dice[0].value
   )) {
-    console.log("Game won!")
+    gameWon = true
   }
 
   // throw die (randomDie)
@@ -67,7 +69,8 @@ function App() {
       <div className='dice-container'>
         {diceElements}
       </div>
-      <button className='roll-dice' onClick={updateDice}>Roll</button>
+      {gameWon && <button className='roll-dice' onClick={updateDice}>New Game</button>}
+      {!gameWon && <button className='roll-dice' onClick={updateDice}>Roll</button>}
     </main>
   )
 }

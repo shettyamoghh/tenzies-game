@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid'
 import Die from './components/Die'
 import Header from './components/Header'
 import ReactConfetti from 'react-confetti'
+import Footer from './components/Footer'
 
 function App() {
   // set/update array of dice
@@ -73,6 +74,7 @@ function App() {
       <button className='roll-dice' onClick={updateDice}>
         {gameWon ? "New Game" : "Roll"}
       </button>
+      <Footer />
     </main>
   )
 }
